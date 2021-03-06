@@ -1,41 +1,40 @@
-<template >
-<div class="border-green-700 bg-gray-300 px-4 py-2 mx-2 my-2 rounded-lg">
-  
-    <h1 class= "text-center text-gray-800 text-4xl">
-        Login Page
-    </h1>
-
-</div>
-
-
-<div class="mt-4 pb-12 ">
-
-  
-
-    <span class="mx-auto w-3/6">
-        
-    <input type="text"  placeholder="Username" v-model="username" class="focus:ring-2 focus:ring-blue-500 border-2 border-black"> <br>
-    <input type="password" placeholder="Password" v-model="password" class="focus:ring-2 focus:ring-blue-500 border-2 border-black"> <br>
-
-     <button  class="bg-blue-500 hover:bg-blue-700 text-white font-font-bold py-2 px-4 rounded border-4">Sign In</button>
-
-    <button @click="doit" class="bg-blue-500 hover:bg-blue-700 text-white font-font-bold py-2 px-4 rounded border-2">Sign Up</button>
-    </span>
-
-  
-</div>
-
-<div class="text-white">
-    <p>Username: {{username}}</p>
-    <p>Password: {{password}}</p>
-</div>
-
+<template>
+  <section class="bg-neutral max-w-2xl mx-auto rounded text-white">
+    <div class="container flex items-center justify-center text-center">
+      <form
+        @submit.prevent
+        class="flex flex-col w-full max-w-lg p-12 rounded shadow-lg text-white ng-untouched ng-pristine ng-valid"
+      >
+        <label for="username" class="self-start text-xs font-semibold"
+          >Username or Email</label
+        >
+        <input
+          id="username"
+          type="text"
+          class="flex items-center h-12 px-4 mt-2 rounded focus:outline-none focus:ring-2 text-coolGray-900"
+        />
+        <label for="password" class="self-start mt-3 text-xs font-semibold"
+          >Password</label
+        >
+        <input
+          id="password"
+          type="password"
+          class="flex items-center h-12 px-4 mt-2 rounded focus:outline-none focus:ring-2 text-coolGray-900"
+        />
+        <button type="submit" @click="login" class="btn btn-primary mt-4">
+          Login
+        </button>
+      </form>
+    </div>
+  </section>
 </template>
 
 <script setup>
-import {ref} from 'vue'
-const username =  ref('')
-const password = ref('')
-
-const doit = () => console.log('Hi')
+import { useRouter } from "vue-router"
+import { isAuthenticated } from "../helpers/useAuth"
+const router = useRouter()
+const login = () => {
+  isAuthenticated.value = true
+  router.push("/")
+}
 </script>
