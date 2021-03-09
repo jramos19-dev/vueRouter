@@ -16,14 +16,21 @@
         <router-link to="/About" class="btn btn-ghost btn-sm rounded-btn">
           About
         </router-link>
+        <div v-if="!isAuthenticated">
+          <router-link
+            to="/login"
+            class="btn btn-ghost btn-sm rounded-btn hover:text-content-100"
+          >
+            Login
+          </router-link>
+          <router-link
+            to="/signUp"
+            class="btn btn-ghost btn-sm rounded-btn hover:text-content-100"
+          >
+            SignUp
+          </router-link>
+        </div>
 
-        <router-link
-          v-if="!isAuthenticated"
-          to="/login"
-          class="btn btn-ghost btn-sm rounded-btn"
-        >
-          Login
-        </router-link>
         <div v-else>
           <router-link to="/Secret" class="btn btn-ghost btn-sm rounded-btn">
             Secret

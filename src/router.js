@@ -12,7 +12,7 @@ import NotFound from "./views/NotFound.vue"
 import Legends from "./views/legends.vue"
 import login from "./views/login.vue"
 import Secret from "./views/Secret.vue"
-
+import signUp from "./views/signUp.vue"
 import { isAuthenticated } from "./helpers/useAuth.js"
 
 const routes = [
@@ -29,6 +29,7 @@ const routes = [
       return "/login"
     },
   },
+  { path: "/signUp", component: signUp },
 ]
 
 export const router = createRouter({
