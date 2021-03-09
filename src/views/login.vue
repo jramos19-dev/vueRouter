@@ -6,12 +6,13 @@
         class="flex flex-col w-full max-w-lg p-12 rounded shadow-lg text-white ng-untouched ng-pristine ng-valid"
       >
         <label for="username" class="self-start text-xs font-semibold"
-          >Username or Email</label
+          >Email</label
         >
         <input
           id="username"
           type="text"
           class="flex items-center h-12 px-4 mt-2 rounded focus:outline-none focus:ring-2 text-coolGray-900"
+          v-model="email"
         />
         <label for="password" class="self-start mt-3 text-xs font-semibold"
           >Password</label
@@ -20,6 +21,7 @@
           id="password"
           type="password"
           class="flex items-center h-12 px-4 mt-2 rounded focus:outline-none focus:ring-2 text-coolGray-900"
+          v-model="password"
         />
         <button type="submit" @click="login" class="btn btn-primary mt-4">
           Login
@@ -30,11 +32,18 @@
 </template>
 
 <script setup>
+import { ref } from "vue"
 import { useRouter } from "vue-router"
-import { isAuthenticated } from "../helpers/useAuth"
+import { signIn } from "../helpers/useAuth"
 const router = useRouter()
-const login = () => {
-  isAuthenticated.value = true
-  router.push("/")
+const login = async () => {
+  try {
+    await signIn(email.value, password.value)
+    router.push("/")
+  } catch (error) {
+    console.log(error)
+  }
 }
+const email = ref("")
+const password = ref("")
 </script>

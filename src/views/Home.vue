@@ -5,7 +5,7 @@
 
   <div>
     <p class="text-center pt-12 text-red-800 text-4xl mb-0">
-      Welcome fighters to the apex arena <br />
+      Welcome {{ user?.email || "New User" }} to the apex arena <br />
       Choose your legend and their abilities<br />
     </p>
 
@@ -37,3 +37,7 @@
   @apply max-w-xs h-10 inline-block;
 }
 </style>
+
+<script setup>
+import { user } from "../helpers/useAuth"
+</script>
