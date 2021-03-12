@@ -1,4 +1,5 @@
 <template>
+  <Alert v-if="isError" />
   <div
     class="navbar mb-2 shadow-lg bg-neutral text-neutral-content rounded-box"
   >
@@ -45,6 +46,7 @@
 </template>
 
 <script setup>
+import { isError } from "../helpers/useError"
 import { useRouter } from "vue-router"
 import { isAuthenticated, signOut } from "../helpers/useAuth"
 const router = useRouter()
