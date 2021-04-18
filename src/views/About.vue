@@ -12,7 +12,9 @@
         each one of the fighers special <br />
       </p>
     </div>
+  </div>
 
-    <button class="btn btn-primary">Hello</button>
+  <div>
+    <video src="https://www.youtube.com/watch?v=2j20aEY2quI"></video>
   </div>
 </template>

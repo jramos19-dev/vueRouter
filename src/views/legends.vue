@@ -6,7 +6,7 @@
   <div>
     <span class="bg-red-900 text-purple-700">
       <ul class="text-center">
-        <li class="hover:bg-gray-300 hover:text-red-900">Lifeline</li>
+        <li class="hover:bg-gray-300 hover:text-red-900 -mx-1">Lifeline</li>
         <li class="hover:bg-gray-300 hover:text-red-900">Octane</li>
         <li class="hover:bg-gray-300 hover:text-red-900">BloodHound</li>
         <li class="hover:bg-gray-300 hover:text-red-900">Mirage</li>

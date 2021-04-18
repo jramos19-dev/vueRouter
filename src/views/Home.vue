@@ -5,7 +5,7 @@
 
   <div>
     <p class="text-center pt-12 text-red-800 text-4xl mb-0">
-      Welcome {{ user?.email || "New User" }} to the apex arena <br />
+      Welcome {{ user?.displayName || "New User" }} to the apex arena <br />
       Choose your legend and their abilities<br />
     </p>
 
