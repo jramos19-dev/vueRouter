@@ -14,7 +14,7 @@
 
   <footer class="align-bottom text-center left-0 bottom-0">
     Facebook:
-    <img src="../assets/Facebook.png" alt="facebookpage" class="img_logo" />
+    <img src="../assets/facebook.png" alt="facebookpage" class="img_logo" />
     Twitter:
     <img src="../assets/tweeter.png" alt="tweeterlogo" class="img_logo" />
   </footer>

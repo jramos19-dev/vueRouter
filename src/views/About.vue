@@ -14,7 +14,5 @@
     </div>
   </div>
 
-  <div>
-    <video src="https://www.youtube.com/watch?v=2j20aEY2quI"></video>
-  </div>
+  <div></div>
 </template>
