@@ -11,7 +11,6 @@
         legends bios and learn more about what makes<br />
         each one of the fighers special <br />
       </p>
-      mdi-account-boxs
     </div>
   </div>
 
