@@ -7,7 +7,10 @@
     "serve": "vite preview"
   },
   "dependencies": {
+    "@vueuse/core": "^4.9.1",
     "@vueuse/firebase": "^4.3.4",
+    "@vueuse/integrations": "^4.9.1",
+    "axios": "^0.21.1",
     "firebase": "^8.2.10",
     "vee-validate": "^4.2.2",
     "vue": "^3.0.5",
@@ -22,6 +25,7 @@
     "postcss": "^8.2.6",
     "tailwindcss": "^2.0.3",
     "vite": "^2.0.0-beta.70",
-    "vite-plugin-components": "^0.8.0"
+    "vite-plugin-components": "^0.8.0",
+    "vite-plugin-icons": "^0.5.0"
   }
 }
