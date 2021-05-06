@@ -20,7 +20,7 @@ const routes = [
   { path: '/', name: 'Home', component: Home },
   { path: '/about', name: 'About', component: About },
   { path: '/:pathMatch(.*)*', name: 'NotFound', component: NotFound },
-  { path: '/Legends', name: 'Legends', component: Legends },
+  { path: '/Legends', name: 'Legends', component: Legends, props: true },
   { path: '/login', name: 'login', component: login },
   {
     path: '/legends/:id',

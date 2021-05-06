@@ -5,21 +5,30 @@
       <h2>The details page for legend {{ $route.params.id }}</h2>
     </div>
   </div>
-  <div class="bg-yellow-400 w-64 h-64 mx-auto"></div>
 
-  <div v-for="(tip, index) in tips" :key="index" :tip="tip" class="text-center">
-    <h3>Tip {{ tip.title }}</h3>
+  <div class="w-64 h-64 mx-auto">
+    <img :src="character.url" :alt="character.description" />
+  </div>
+
+  <div v-for="(tip, index) in tips" :key="index" class="text-center">
+    <h3 class="text-fuchsia-400 text-3xl">Tip {{ tip.title || 'no title' }}</h3>
     <p class="px-80 text-2xl text-gray-300">
-      {{ tip.content }}
+      {{ tip.content || 'none' }}
     </p>
   </div>
 </template>
 
 <script setup>
-const id = ''
+import { tips, getTipsByCharId } from '../../helpers/useTips'
+import { character, getCharacterById } from '../../helpers/useCharacters'
+import { useRoute } from 'vue-router'
+import { onMounted } from 'vue'
 
-import { defineProps, onMounted } from 'vue'
-import { tips, getAllTips, getTipsById } from '../../helpers/useTips'
+const r = useRoute()
 
-onMounted(async () => await getTipsById())
+onMounted(async () => {
+  await getTipsByCharId(r.params.id)
+  await getCharacterById(r.params.id)
+  console.log(character)
+})
 </script>

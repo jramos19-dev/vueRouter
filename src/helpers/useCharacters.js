@@ -12,15 +12,16 @@ const api = axios.create({
   },
 })
 
-export const tips = ref([])
+export const character = ref([])
+export const characters = ref([])
 
-export const getAllTips = async () => {
-  const { data } = await api.get('/tips')
-  tips.value = data
+export const getAllCharacters = async () => {
+  const { data } = await api.get('/characters')
+  characters.value = data
 }
 
-export const getTipsByCharId = async (id) => {
+export const getCharacterById = async (id) => {
   // /tipsbycharid/3
-  const { data } = await api.get(`/tips/tipsbycharid/${id}`)
-  tips.value = data
+  const { data } = await api.get(`/characters/${id}`)
+  character.value = data
 }
