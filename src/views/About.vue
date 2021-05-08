@@ -1,6 +1,6 @@
 <template>
-  <div class="bg-red-400">
-    <h1 class="text-blue-900 border-gray-700 mx-auto text-3xl text-center">
+  <div class="">
+    <h1 class="text-blue-200 border-gray-700 mx-auto text-3xl text-center">
       About Page
     </h1>
     <div class="mx-4 my-2 text-center text-green-800 bg-apex-legend">

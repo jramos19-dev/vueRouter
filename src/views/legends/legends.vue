@@ -1,25 +1,19 @@
 <template>
-  <div class="border-green-700 bg-gray-300 px-4 py-2 mx-2 my-2 rounded-lg">
-    <h1 class="text-center text-3xl font-bold font-serif">Legends</h1>
+  <div>
+    <div class="text-center text-3xl font-bold">Legends</div>
 
-    <div
-      v-for="character in characters"
-      :key="character"
-      class="text-lg text-center"
-    >
+    <div v-for="character in characters" :key="character" class="text-center">
       <router-link
         :to="{ name: 'legendDetails', params: { id: character.id } }"
       >
-        <h2>{{ character.name }}</h2>
+        <h2>
+          {{ character.name }}
+        </h2>
       </router-link>
     </div>
   </div>
-  <div>
-    <img
-      src="../../assets/lifeLine.jpg"
-      alt="Lifeline"
-      class="w-3/6 h-1/3 block mx-auto"
-    />
+  <div class="w-3/6 h-1/3 block mx-auto">
+    <img src="../../assets/lifeLine.jpg" alt="Lifeline" />
   </div>
 </template>
 
@@ -42,3 +36,11 @@ onMounted(async () => {
 
 const route = useRoute()
 </script>
+<style>
+.links {
+  display: flex;
+  max-width: 100px;
+  align-items: center;
+  margin: auto;
+}
+</style>

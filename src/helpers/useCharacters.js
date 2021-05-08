@@ -25,3 +25,12 @@ export const getCharacterById = async (id) => {
   const { data } = await api.get(`/characters/${id}`)
   character.value = data
 }
+
+export const sendCharacter = async (character) => {
+  console.log(character.value)
+  await api.post('/characters/', { character })
+}
+
+export const editCharater = async (character, id) => {
+  await api.put(`/characters/${id}`, { character })
+}

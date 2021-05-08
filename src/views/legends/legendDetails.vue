@@ -1,20 +1,43 @@
 <template>
-  <div class="container mx-auto">
-    <h1 class="text-gray-300 text-4xl text-center">Legends Details Page</h1>
-    <div class="text-gray-300 text-center text-2xl">
-      <h2>The details page for legend {{ $route.params.id }}</h2>
+  <div class="containter mx-auto">
+    <div class="mx-auto w-auto h-60 flex justify-center rounded-t-full">
+      <img :src="character.url" :alt="character.description" />
+    </div>
+    <div>
+      <div
+        v-for="(tip, index) in tips"
+        :key="index"
+        class="text-gray-400 justify-center text-center"
+      >
+        <h2 class="text-rose-500">
+          {{ tip.title }}
+        </h2>
+        <p>
+          {{ tip.content }}
+        </p>
+      </div>
     </div>
   </div>
 
-  <div class="w-64 h-64 mx-auto">
-    <img :src="character.url" :alt="character.description" />
-  </div>
-
-  <div v-for="(tip, index) in tips" :key="index" class="text-center">
-    <h3 class="text-fuchsia-400 text-3xl">Tip {{ tip.title || 'no title' }}</h3>
-    <p class="px-80 text-2xl text-gray-300">
-      {{ tip.content || 'none' }}
-    </p>
+  <div
+    v-if="isAuthenticated"
+    class="bg-blueGray-400 grid mx-auto px-64 w-40 justify-start"
+  >
+    <input type="text" placeholder="name" />
+    <input type="text" placeholder="description" />
+    <input type="text" placeholder="imageURL" />
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 border border-blue-700 rounded"
+    >
+      Edit Character
+    </button>
+    <input type="text" placeholder="tip" />
+    <input type="text" placeholder="content" />
+    <button
+      class="bg-blue-500 hover:bg-blue-700 text-white font-bold py-2 border border-blue-700 rounded"
+    >
+      Edit Tip
+    </button>
   </div>
 </template>
 
@@ -23,7 +46,7 @@ import { tips, getTipsByCharId } from '../../helpers/useTips'
 import { character, getCharacterById } from '../../helpers/useCharacters'
 import { useRoute } from 'vue-router'
 import { onMounted } from 'vue'
-
+import { isAuthenticated, user } from '../../helpers/useAuth'
 const r = useRoute()
 
 onMounted(async () => {
